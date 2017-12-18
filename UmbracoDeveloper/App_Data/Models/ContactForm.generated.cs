@@ -46,12 +46,39 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ContactForm: Contact form
+		/// Address: address of company
 		///</summary>
-		[ImplementPropertyType("Contactus")]
-		public IHtmlString Contactus
+		[ImplementPropertyType("address")]
+		public string Address
 		{
-			get { return this.GetPropertyValue<IHtmlString>("Contactus"); }
+			get { return this.GetPropertyValue<string>("address"); }
+		}
+
+		///<summary>
+		/// companyName: Name of the company
+		///</summary>
+		[ImplementPropertyType("companyName")]
+		public string CompanyName
+		{
+			get { return this.GetPropertyValue<string>("companyName"); }
+		}
+
+		///<summary>
+		/// emailId: General email for correspondence
+		///</summary>
+		[ImplementPropertyType("emailId")]
+		public string EmailId
+		{
+			get { return this.GetPropertyValue<string>("emailId"); }
+		}
+
+		///<summary>
+		/// phoneNo
+		///</summary>
+		[ImplementPropertyType("phoneNo")]
+		public string PhoneNo
+		{
+			get { return this.GetPropertyValue<string>("phoneNo"); }
 		}
 	}
 }
