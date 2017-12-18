@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Blog>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "HomeLayout.cshtml";
+}
+<div style="margin-left:30px; margin-top:30px; margin-bottom:30px;">
+<center><h1>@Model.GetPropertyValue("blogName")</h1></center>
+<br><br>
+@Model.GetPropertyValue("blogDiscription")
+@Model.GetPropertyValue("blogContent")
+<br><br>
+</div>

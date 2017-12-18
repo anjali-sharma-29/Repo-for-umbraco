@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout ="HomeLayout.cshtml";
+}
+<h2><font color="black"><center> @Model.GetPropertyValue("headerText")</center></font></h2>
+<br>
+<div style="background-color:#f2f2f2;">
+    @Model.GetGridHtml("features");
+</div>
+<br><br>
+
+    

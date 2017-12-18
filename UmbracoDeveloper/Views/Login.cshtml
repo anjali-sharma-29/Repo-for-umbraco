@@ -1,0 +1,68 @@
+﻿
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Login>
+@{
+	Layout = "Master.cshtml";
+}
+@using(Html.BeginUmbracoForm("Login","Login"))
+{
+<div class="login">
+    @Html.TextBox("username","", new { @placeholder = "UserName" , @required="required"}) <br>
+    @Html.Password("password","", new { @placeholder = "Password", @required="required" }) <br>
+
+    <h5 class="forgot" style="text-align:center;">
+        @Html.ActionLink("forgot password?","ForgotPassword","Login")
+        @if (@ViewBag.InvalidUser != null)
+        {
+            <font color="red">@ViewBag.InvalidUser</font>
+        }
+    </h5>
+        <input type="submit" value="Log In" name="submit">
+</div>
+<div class="shadow"></div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

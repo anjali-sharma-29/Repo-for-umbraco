@@ -1,0 +1,19 @@
+﻿@{
+	Layout = "Master.cshtml";
+}
+@using (Html.BeginUmbracoForm("Register", "Login"))
+{
+    <div class="login">
+        @Html.TextBox("username","", new { @placeholder = "UserName" , @required="required" }) <br>
+        @Html.Password("password", "", new { @placeholder = "Password", @required = "required" }) <br>
+        @Html.TextBox("email", "", new { @placeholder = "abc@example.com", @required = "required"})<br>
+        @if (@ViewBag.InvalidDetails != null)
+        {
+            <h5 style="text-align:center"><font color="red">@ViewBag.InvalidDetails</font></h5>
+        }
+        <input type="submit" value="Register">
+    </div>
+    <div class="shadow"></div>
+}
+
+

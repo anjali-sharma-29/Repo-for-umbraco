@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.BlogList>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "HomeLayout.cshtml";
+}
+<br>
+<div style="margin-left:20px;margin-top:30px;">
+<center><h2>Blogs: Something More About Umbraco</h2></center>
+<ul>
+    @foreach(var item in @Model.Children)
+    {
+    <br>
+    <li>
+          <font color="orange">@item.Name<br></font>
+          <font color="red">Created At :</font>@item.CreateDate.ToShortDateString()
+          <font color="red">Created by :</font>@item.GetPropertyValue("authorName")
+          <br><br><div stle="margin-left:20px; ">
+          @item.GetPropertyValue("briefDescription")
+          </div>
+          <a href=@item.Url><u>Read More</u></a>
+    </li>
+    }
+</ul>
+<br><br>
+</div>
+    

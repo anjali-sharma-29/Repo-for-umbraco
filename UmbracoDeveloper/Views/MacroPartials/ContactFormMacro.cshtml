@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage;
+@Using(Html.BeginUmbracoForm("ContactUs","ContactUs"))
+{
+    Name:
+    @Html.TextBox("Name")<br>
+    Email: @Html.TextBox("Email")<br>
+    Message: @Html.TextBox("Message")<br/> 
+    <input type="submit" value="Submit" name="submit">
+}
+
+
