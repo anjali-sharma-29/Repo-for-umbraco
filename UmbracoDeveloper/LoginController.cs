@@ -114,8 +114,11 @@ namespace UmbracoDeveloper
             {
                 db.ContactUsers.Add(user);
                 db.SaveChanges();
+                ViewBag.Success = $"Thanks {name} for submiting response";
             }
-            return View();
+            RenderModel model = new RenderModel(CurrentPage);
+            return View(model);
         }
+        
     }
 }

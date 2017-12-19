@@ -1,0 +1,42 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Video>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using Umbraco.Web.Models;
+@{
+	Layout = "HomeLayout.cshtml";
+}
+<h3 style="background-color:aliceblue"><br><center>Umbraco- Video Contents Using Related Links</center><br></h3>
+    <div>
+        <div class="row" style="margin-left:20px; margin-right:20px; background-color:beige" >
+        <br>
+            @foreach (var item in @Model.GetPropertyValue<RelatedLinks>("videoLinks"))
+            {
+                <div class="col-sm-4">
+                <iframe  src="@item.Link?autoplay=0" allowfullscreen>
+                </iframe>
+                <div width="200" height="200">
+                    @item.Caption
+                </div>
+                </div><br>
+            }
+        </div>
+    </div>
+<br>
+<div style="margin-left:20px; margin-right:20px; background-color:beige">
+@foreach(IPublishedContent video in @Model.Children)
+{
+        <br><h4><font color="crimson">@video.Name</font></h4><br>
+        <div class="row">
+        <br>
+            @foreach (var item in @video.GetPropertyValue<RelatedLinks>("videoLinks"))
+            {
+                <div class="col-sm-4">
+                <iframe  src="@item.Link?autoplay=0" allowfullscreen>
+                </iframe>
+                <div width="200" height="200">
+                    @item.Caption
+                </div>
+                </div><br>
+            }
+        </div>
+}
+</div><br>
